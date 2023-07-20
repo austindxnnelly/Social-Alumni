@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous")
+    //-link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="/stylesheets/sign-in.css" rel="stylesheet")
+    script(defer, src='/javascripts/preview_image.js')
+    header(class="p-3 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="box-shadow: 0px 0px 8px #0007;")
+      div(class="container" style="top: 0;")
+        include nav 
+
+  body(class = "text-center")
+    main(class="form-signin w-100 m-auto text-center")
+      p #{errors}
+      form(action='/home/signin', method='post')
+        h1(class="h3 mb-3" style="color: var(--bs-warning);") User Information
+        div(class="form-floating")
+          input(type="email" id="email" name="email", class="form-control" placeholder="Email" required="true")
+          label(for="email") Email 
+        div(class="form-floating")
+          input(type="password" name="password", class="form-control" id="password" placeholder="Password" required="true")        
+          label(for="password") Password 
+          button(type='submit' class="w-100 btn btn-lg text-white" style="background: #023e8a") Sign In
+          
+    a(class='button' href='/home/create') Create Account
+

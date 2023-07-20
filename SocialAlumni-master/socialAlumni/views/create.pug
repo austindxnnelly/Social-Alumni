@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous")
+    //-link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="/stylesheets/create.css" rel="stylesheet")
+    script(defer, src='/javascripts/preview_image.js')
+    script(src='/javascripts/create_form_control.js')
+    header(class="p-3 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom")
+      div(class="container" style="top: 0")
+        include nav 
+
+  body(class = "text-center")
+    main(class="form-signin m-auto text-center")
+      p #{errors}
+      form(action='/home/create', method='post', enctype="multipart/form-data")
+        h1(class="h3 mb-3 fw-normal" style="color: var(--bs-warning)") User Information
+        div(class="row g-3")
+          div(class="col-md-6")
+            div(class="row g-3")
+              div(class="col-md-6")
+                input(type="text" class="form-control" placeholder="First Name" aria-label="First Name" id="inputFirstName", name='inputFirstName', required='true')
+              div(class="col-md-6")
+                input(type="text" class="form-control" placeholder="Last Name" aria-label="Last Name" id="inputLastName", name='inputLastName', required='true')
+              div(class="col-12")
+                input(type="email" class="form-control" placeholder="Email" aria-label="Email" id="email" name="email", required='true')
+              div(class="col-12")  
+                input(type="password" class="form-control" placeholder="Password" aria-label="Password" id="password" name='password', required='true')
+              div(class="col-12")  
+                input(type="number", id="inputPhone", name='inputPhone' class="form-control" placeholder="Phone Number", required='true')
+              div(class="col-12")
+                div(class="form-check form-check-inline")
+                  input(class="form-check-input" type="radio" name="userRadio" id="studentRadio" value="true" onclick="studentCheck()")
+                  label(class="form-check-label" for="studentRadio") Student
+                div(class="form-check form-check-inline")
+                  input(class="form-check-input" type="radio" name="userRadio" id="alumniRadio" value="true" onclick="studentCheck()")
+                  label(class="form-check-label" for="alumniRadio") Alumni
+              div(class="col-12"  id="inputMajor" style="display: none;")
+                input(type="text" class="form-control" placeholder="Current Major" aria-label="Current Major" name='inputMajor')
+              div(class="col-12"  id="inputInterests" style="display: none;")
+                input(type="text" class="form-control" placeholder="Areas of Interest" aria-label="Areas of Interest" name='inputInterests')
+              div(class="col-12"  id="inputDegree" style="display: none;")
+                input(type="text" class="form-control" placeholder="Degree" aria-label="Degree" name='inputDegree')
+              div(class="col-12"  id="inputWork" style="display: none;")
+                input(type="text" class="form-control" placeholder="Area of Work" aria-label="Area of Work" name='inputWork')
+          div(class="col-md-6")
+            div(class="form-floating")
+              img(id="upload_preview", src='/images/' class="rounded mx-auto d-block")
+              input(name='photo_upload', type='file', id="photo_upload" placeholder="Upload Photo" class="form-control-file" aria=label="Photo Upload" accept="image/x-png,image/gif,image/jpeg, image/png")
+              div
+                input(id="upload_source" type="text" name="photo_source" readonly="readonly" value="default.jpg" class="form-control-plaintext" style="display: none;")
+
+        button(type='submit' class="w-100 text-white btn btn-lg" style="margin-top: 5px; background: #023e8a") Create Account

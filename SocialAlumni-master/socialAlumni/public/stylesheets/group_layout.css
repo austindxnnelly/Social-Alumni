@@ -1,0 +1,20 @@
+:root {
+    --aside-width: 300px;
+    --header-height: 100px;
+    --footer-height: 50px;
+}
+/* grid layout */
+body {
+    display: grid;
+    grid-template-columns: var(--aside-width) 1fr;
+    grid-template-rows: min-content 1fr min-content;
+    min-height: 100vh;
+    margin: 0;
+}
+header {
+    grid-column: span 2;
+    height: var(--header-height);
+    background: var(--bs-warning);
+}
+
+

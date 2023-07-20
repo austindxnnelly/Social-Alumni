@@ -1,0 +1,22 @@
+button {
+    max-width: 200px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+li {
+    text-align: left;
+    margin: 5px;
+}
+
+button {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+header {
+  background: var(--bs-warning);
+}

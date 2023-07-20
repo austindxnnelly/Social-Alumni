@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  title Profile
+  link(href="/stylesheets/profle.css" rel="stylesheet")
+  header(class="p-3 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom")
+    div(class="container")
+      include nav 
+
+  .profile-section
+    legend Profile Settings
+
+    .row-profile
+      .column-profile
+        form(class="form-profile", method="get")
+          fieldset
+            label(for="profilePictures") Profile Picture
+            br
+            img(src=`/profilePictures/${profilePictures}`, alt="Profile picture", style="max-width: 100%")
+
+      .column-profile
+        form(class="form-profile", method="get")
+          fieldset
+            label(for="userFirstName") First Name
+            div
+              p(for="firstName") #{firstname}
+            p
+            label(for="userSurname") Surname
+            div
+              p(for="lastName") #{lastname}
+            p
+            label(for="userEmail") Email
+            div
+              p #{email}
+
+      .column-profile
+        form(class="form-profile", method="get")
+          fieldset
+            label(for="userEmail") Degree
+            div
+              p #{major}
+            p
+            label(for="userEmail") Work/Interests
+            div
+              p #{work}
+            p

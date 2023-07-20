@@ -1,0 +1,156 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--light-color);
+  text-align: center;
+  margin-top: -20px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+header {
+  background:var(--bs-warning);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 17px;
+  background-color:#0044B3;
+  color: #fff;
+  box-sizing: border-box;
+  margin-top: -20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+nav li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: green;
+  --secondary-color: #6c757d;
+  --light-color: #f8f9fa;
+  --dark-color: #0044B3;
+}
+
+h1 {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  text-align: left;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  box-shadow: none;
+  border-color:#00B7FF;
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  text-align: left;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin legend {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-signin button {
+  margin-left: 118px;
+}
+
+.column-profile {
+  margin-top: 15px;
+  float: left;
+  width: 33.33%;
+  font-size: 16px;
+}
+
+/* Clear floats after the columns */
+.row-profile:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row-profile {
+  margin-bottom: 20px;
+}
+
+.column-profile {
+  text-align: left;
+}
+
+.column-message {
+  float: left;
+  width: 50%;
+}
+
+legend {
+  font-size: 20px;
+}
+
+.post-box {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+span {
+  margin-top: 10px;
+}

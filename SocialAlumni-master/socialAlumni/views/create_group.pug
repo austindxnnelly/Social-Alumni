@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous")
+    //-link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="/stylesheets/create.css" rel="stylesheet")
+    script(defer, src='/javascripts/preview_image.js')
+    header(class="p-3 d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom" style="box-shadow: 0px 0px 8px #0007;")
+      div(class="container" style="top: 0;")
+        include nav 
+
+  body(class = "text-center")
+    main(class="form-signin w-100 m-auto text-center")
+      p #{errors}
+      h1(class="h3 mb-3" style="color: var(--bs-warning);") Group Information
+      form(action='/home/create-group/', method='post')
+        div(class="form-group")
+          input(type="text" id="group_name", name='group_name', class="form-control" placeholder="Group Name" required='true')
+        div(class="form-group")
+          br
+          textarea(type="text" placeholder="Description" id="group_description" autocomplete="off" name="group_description" rows="3" class="form-control" required='true')
+        button(type='submit' class="w-100 btn btn-lg text-white" style="background: #023e8a") Create Group
+          

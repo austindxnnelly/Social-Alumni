@@ -1,0 +1,18 @@
+h2 Search Site
+form(action='/home/search', method='get')
+    label(for='search') Search
+    input(type='text' name='search' id='search' placeholder="search...")
+
+    label(for='sort') Sort By
+    select(name='sort', id='sort')
+        option(value='alphabetical') alphabetical
+        option(value='Reverse alphabetical') Reverse alphabetical
+    
+    label(for='usertype') User Type
+    select(name='usertype' id='usertype')
+        option(selected) All
+        option(class="Student") Student
+        option(class="Alumni") Alumni
+    button(type='submit') Filter
+
+    p= `${birds.length} birds found` 
